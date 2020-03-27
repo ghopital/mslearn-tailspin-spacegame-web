@@ -22,6 +22,7 @@ steps:
   inputs:
     version: '2.1.505'
 
+
 - task: Npm@1
   displayName: 'Run npm install'
   inputs:
@@ -43,6 +44,7 @@ steps:
     command: 'restore'
     projects: '**/*.csproj'
 
+
 - task: SonarCloudPrepare@1
   displayName: 'Prepare SonarCloud analysis'
   inputs:
@@ -56,6 +58,7 @@ steps:
      sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/TestResults/Coverage/coverage.opencover.xml
      sonar.exclusions=**/wwwroot/lib/**/*
 
+
 - task: DotNetCoreCLI@2
   displayName: 'Build the project - $(buildConfiguration)'
   inputs:
@@ -64,6 +67,7 @@ steps:
     projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
+
   displayName: 'Install ReportGenerator'
   inputs:
     command: custom
@@ -95,6 +99,7 @@ steps:
     summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
 
 - task: DotNetCoreCLI@2
+
   displayName: 'Publish the project - $(buildConfiguration)'
   inputs:
     command: 'publish'
