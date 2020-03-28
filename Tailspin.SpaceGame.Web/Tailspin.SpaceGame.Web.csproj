@@ -7,12 +7,10 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Tailspin.SpaceGame.Web.Models" Version="2.0.0-CI-20200328-202605" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\images\avatars\" />
   </ItemGroup>
-
-  <PackageReference Include="Tailspin.SpaceGame.Web.Models" Version="1.0.0-CI-20200328-200606" />
-
 </Project>
